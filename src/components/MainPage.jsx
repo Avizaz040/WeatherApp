@@ -16,7 +16,7 @@ function MainPage() {
       </div>,
     },
     {
-      path: "/WeatherApp/weather",
+      path: "/weather",
       element: 
       <div>
         <Navbar/>
@@ -25,7 +25,7 @@ function MainPage() {
       </div>,
     },
     {
-      path: "/WeatherApp/privacy",
+      path: "/privacy",
       element: 
       <div>
         <Navbar/>
