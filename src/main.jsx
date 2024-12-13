@@ -5,8 +5,6 @@ import MainPage from "./components/MainPage.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    
       <MainPage />
-  
   </StrictMode>
 );
