@@ -5,8 +5,8 @@ import MainPage from "./components/MainPage.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/WeatherApp">
+    
       <MainPage />
-    </BrowserRouter>
+  
   </StrictMode>
 );
