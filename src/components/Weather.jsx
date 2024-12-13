@@ -19,7 +19,7 @@ function Weather() {
   const [query, setQuery] = useState("Kolkata");
 async function getWeatherReport() {
 
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=ad603215e0564d17b7b162610240512&q=${query}&aqi=yes`);
+    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=ad603215e0564d17b7b162610240512&q=${query}&aqi=yes`);
  
   const data = await response.json();
   getWeatherData({

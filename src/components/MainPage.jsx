@@ -8,7 +8,7 @@ import Footer from "./Footer";
 function MainPage() {
   const router = createBrowserRouter([
     {
-      path: "/WeatherApp/",
+      path: "/WeatherApp",
       element: 
       <div>
         <Navbar/>
