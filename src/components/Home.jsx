@@ -25,7 +25,7 @@ function Home() {
 
       {/* Heading */}
       <div className="w-4/5 md:w-3/5 text-center mb-4 z-20">
-        <p className="text-3xl md:text-5xl lg:text-7xl font-normal leading-snug">
+        <p className="text-3xl md:text-5xl lg:text-7xl font-normal leading-relaxed md:leading-normal lg:leading-snug">
           The only Competitor to the Weather Channel.
         </p>
       </div>
@@ -44,7 +44,7 @@ function Home() {
       <img
         src={cloudImage}
         alt="cloud Image"
-        className="absolute -left-16 md:-left-8 lg:left-32 top-52 md:top-72 lg:top-40 w-[200px] md:w-[300px] lg:w-[500px]"
+        className="absolute -left-16 md:-left-8 lg:left-32 top-52 md:top-72 lg:top-52 w-[200px] md:w-[300px] lg:w-[500px]"
       />
 
       {/* Cool Demo Section */}
@@ -57,7 +57,7 @@ function Home() {
       {/* Weather Card */}
       <div className="w-4/5 md:w-3/5 lg:w-3/6 bg-gradient-to-b from-[#178dad] to-[#badee8] rounded-3xl flex flex-col justify-start items-center p-5 mb-8 shadow-lg">
         {/* Navigation Links */}
-        <div className="flex flex-row justify-center items-center gap-4 text-xs bg-white rounded-full px-6 py-2 mb-6">
+        <div className="w-8/12 md:w-2/4 lg:w-1/4  flex flex-row justify-center items-center gap-2 text-xs bg-white rounded-full px-6 py-2 mb-6">
           <p className="cursor-pointer">Home</p>
           <p className="font-semibold underline underline-offset-2 cursor-pointer">
             Weather
@@ -66,7 +66,7 @@ function Home() {
         </div>
 
         {/* Search Input */}
-        <div className="w-full md:w-3/5 text-left bg-[#ffffff48] rounded-full text-xs text-[#f2f0f0] px-4 py-2 border border-[#d7d6d6] mb-8">
+        <div className="w-2/3 md:w-3/5 text-left bg-[#ffffff48] rounded-full text-xs text-[#f2f0f0] px-4 py-2 border border-[#d7d6d6] mb-8">
           Search your location
         </div>
 
@@ -81,13 +81,13 @@ function Home() {
         </div>
 
         {/* Humidity Section */}
-        <div className="w-full flex flex-col md:flex-row justify-center items-center gap-4">
-          <div className="h-12 w-full md:w-1/4 bg-[#c3e1eb] rounded-full flex items-center px-4 text-gray-400 font-semibold text-sm">
+        <div className="w-full flex flex-row md:flex-row justify-center items-center gap-4">
+          <div className="h-10 md:h-14 w-1/3 md:w-1/4 bg-[#c3e1eb] rounded-full flex items-center text-center px-2 md:px-4 lg:px-6 text-gray-400 font-semibold text-sm">
             Humidity
           </div>
           <input
             type="text"
-            className="h-12 w-full md:w-2/4 bg-[#c3e1eb] rounded-full px-4 text-gray-400 font-semibold text-sm outline-none"
+            className="h-10 md:h-14 w-2/3 md:w-2/4 bg-[#c3e1eb] rounded-full px-4 text-gray-400 font-semibold text-sm outline-none"
             disabled
           />
         </div>
