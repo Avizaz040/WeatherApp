@@ -55,7 +55,7 @@ const aqiStatus = () => {
 };
 
 return (
-  <div className="w-full min-h-screen bg-gradient-to-t from-[#fff] to-[#189dc2] px-4 md:px-8 py-12 md:py-28 flex flex-col justify-start items-center text-center">
+  <div className="w-full min-h-screen bg-gradient-to-t from-[#fff] to-[#189dc2]  px-4 md:px-8 py-32 md:py-32 flex flex-col justify-start items-center text-center">
     {/* Search Bar */}
     <div className="w-full md:w-3/5 lg:w-2/5 h-14 flex flex-row placeholder:text-white rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 mb-8 bg-[#8bcee0]">
       <input
@@ -67,7 +67,7 @@ return (
       />
       <button
         onClick={() => setQuery(search)} // Set query state to trigger API call
-        className="w-1/5 h-full px-4 py-2 bg-transparent text-white rounded-r-full hover:bg-[#30a8c98f] text-sm md:text-base"
+        className="w-1/5 h-full px-2 md:px-4 py-2 bg-transparent text-white rounded-r-full hover:bg-[#30a8c98f] text-center text-sm md:text-base"
       >
         Search
       </button>
