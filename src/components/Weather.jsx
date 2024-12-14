@@ -54,76 +54,98 @@ const aqiStatus = () => {
   }
 };
 
-  return (
-    <div className="w-full min-h-screen bg-gradient-to-t from-[#fff] to-[#189dc2] px-8 py-28 flex flex-col justify-start items-center text-center">
-      <div className="w-2/5 h-14 flex flex-row placeholder:text-white rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 mb-8 bg-[#8bcee0]">
+return (
+  <div className="w-full min-h-screen bg-gradient-to-t from-[#fff] to-[#189dc2] px-4 md:px-8 py-12 md:py-28 flex flex-col justify-start items-center text-center">
+    {/* Search Bar */}
+    <div className="w-full md:w-3/5 lg:w-2/5 h-14 flex flex-row placeholder:text-white rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 mb-8 bg-[#8bcee0]">
       <input
         type="text"
         placeholder="Search your location"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="w-4/5 h-14 px-8 placeholder:text-white rounded-full outline-none bg-[#8bcee0]"
+        className="w-4/5 h-full px-4 md:px-8 placeholder:text-white rounded-full outline-none bg-[#8bcee0] text-sm md:text-base"
       />
       <button
         onClick={() => setQuery(search)} // Set query state to trigger API call
-        className="w-1/5 h-14 px-4 py-2 bg-transparent text-white rounded-full hover:bg-blue-500 mb-8"
+        className="w-1/5 h-full px-4 py-2 bg-transparent text-white rounded-r-full hover:bg-[#30a8c98f] text-sm md:text-base"
       >
         Search
       </button>
-      </div>
-      
-      <p className="text-8xl font-semibold leading-normal text-white">
-        {weatherData.temp_c}<span>&#176;</span>C
-      </p>
-      <p className="text-3xl font-semibold leading-3 text-white">
-        {weatherData.temp_f}<span>&#176;</span>F <span>{weatherData.name}/{weatherData.country}</span>
-      </p>
-      <div className="w-2/5 flex flex-row gap-4 justify-between items-center mt-12">
-        <div className="w-1/2 h-64 flex flex-col justify-start items-left gap-4 bg-gradient-to-b from-[#87c4d4] to-[#a8d3e0] rounded-2xl p-6">
-          <p className="w-full text-sm font-semibold text-gray-500 text-left mb-8">
-            Humidity
-          </p>
-          <p className="w-full text-8xl font-semibold text-gray-500 text-start">{weatherData.humidity}<span>%</span>
-          </p>
-        </div>
-        <div className="w-1/2 h-64 flex flex-col justify-start items-left gap-4 bg-gradient-to-b from-[#87c4d4] to-[#a8d3e0] rounded-2xl p-6">
-          <p className="w-full text-sm font-semibold text-gray-500 text-left mb-8">Wind</p>
-          <p className="w-full text-8xl font-semibold text-gray-500 text-start">
-            {Math.round(weatherData.wind_kph)}<span className="text-5xl">km/h</span>
-          </p>
-          <p className="w-full text-base font-semibold text-gray-400 text-start">{weatherData.wind_mph}<span>mi/h</span></p>
-        </div>
+    </div>
+
+    {/* Temperature and Location */}
+    <p className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-normal text-white">
+      {weatherData.temp_c}
+      <span>&#176;</span>C
+    </p>
+    <p className="text-lg md:text-2xl lg:text-3xl font-semibold leading-6 text-white mt-2">
+      {weatherData.temp_f}
+      <span>&#176;</span>F <span>{weatherData.name}/{weatherData.country}</span>
+    </p>
+
+    {/* Weather Stats */}
+    <div className="w-full md:w-3/5 lg:w-2/5 grid grid-cols-2 md:grid-cols-2 gap-4 mt-12">
+      {/* Humidity */}
+      <div className="h-48 md:h-64 flex flex-col justify-start items-left gap-4 bg-gradient-to-b from-[#87c4d4] to-[#a8d3e0] rounded-2xl p-6">
+        <p className="h-1/5 text-sm font-semibold text-gray-500 text-left mb-4">
+          Humidity
+        </p>
+        <p className="h-4/5 md:h-2/3 text-6xl md:text-[5rem] font-semibold text-gray-500 text-left">
+          {weatherData.humidity}
+          <span>%</span>
+        </p>
       </div>
 
-      <div className="w-2/5 flex flex-row gap-4 justify-between items-center mt-4">
-        <div className="w-4/6 h-64 flex flex-col justify-start items-left gap-4 bg-gradient-to-b from-[#87c4d4] to-[#a8d3e0] rounded-2xl p-6">
-          <p className="w-full text-sm font-semibold text-gray-500 text-left mb-8">
-            Rain
-          </p>
-          <p className="w-full text-8xl font-semibold text-gray-500 text-start">{weatherData.precip_in}<span className="text-5xl">inch</span>
-          </p>
-        </div>
-        <div className="w-2/6 h-64 flex flex-col justify-start items-left gap-4 bg-gradient-to-b from-[#87c4d4] to-[#a8d3e0] rounded-2xl p-6">
-          <p className="w-full text-sm font-semibold text-gray-500 text-left mb-8">Feels like</p>
-          <p className="w-full text-8xl font-semibold text-gray-500 text-center">
-           {Math.round(weatherData.feelslike_c)}
-          </p>
-        </div>
+      {/* Wind */}
+      <div className="h-48 md:h-64 flex flex-col justify-start items-left gap-4 bg-gradient-to-b from-[#87c4d4] to-[#a8d3e0] rounded-2xl p-6">
+        <p className="h-1/4 text-sm font-semibold text-gray-500 text-left mb-4">Wind</p>
+        <p className="h-2/4 text-6xl md:text-[5rem] font-semibold text-gray-500 text-start">
+          {Math.round(weatherData.wind_kph)}
+          <span className="text-2xl md:text-3xl">km/h</span>
+        </p>
+        <p className="h-1/4 text-sm md:text-base font-semibold text-gray-400 text-start">
+          {weatherData.wind_mph}
+          <span>mi/h</span>
+        </p>
       </div>
-      
-      <div className="w-2/5 flex flex-row gap-4 justify-between items-center mt-4">
-        <div className="w-full h-64 flex flex-col justify-start items-left gap-4 bg-gradient-to-b from-[#87c4d4] to-[#a8d3e0] rounded-2xl p-6">
-          <p className="w-full text-sm font-semibold text-gray-500 text-left mb-8">
-            AQI
-          </p>
-          <p className="w-full text-8xl font-semibold text-gray-500 text-start">{Math.round(weatherData.pm2_5)}<span className="text-5xl">µg/m³</span>
-          </p>
-          <p className={`w-full text-base font-semibold ${aqiStatus().color} text-start`}>{aqiStatus().status}</p>
-        </div>
-      </div>
-      
     </div>
-  );
+
+    <div className="w-full md:w-3/5 lg:w-2/5 flex flex-row justify-center align-middle gap-4 mt-4">
+      {/* Rain */}
+      <div className="h-48 md:h-64 w-full flex flex-col justify-start items-left gap-4 bg-gradient-to-b from-[#87c4d4] to-[#a8d3e0] rounded-2xl p-6">
+        <p className="h-1/3 text-sm font-semibold text-gray-500 text-left mb-4">Rain</p>
+        <p className="h-2/3 text-4xl md:text-[5rem] font-semibold text-gray-500 text-left">
+          {weatherData.precip_in}
+          <span className="text-2xl md:text-5xl">inch</span>
+        </p>
+      </div>
+
+      {/* Feels Like */}
+      <div className="h-48 md:h-64  flex flex-col justify-start items-left gap-4 bg-gradient-to-b from-[#87c4d4] to-[#a8d3e0] rounded-2xl p-6 col-span-1">
+        <p className="h-1/3 text-sm font-semibold text-gray-500 text-left mb-4">Feels like</p>
+        <p className="h-2/3 text-4xl md:text-[5rem] font-semibold text-gray-500 text-left">
+          {Math.round(weatherData.feelslike_c)}
+        </p>
+      </div>
+    </div>
+
+    {/* AQI Section */}
+    <div className="w-full md:w-3/5 lg:w-2/5 mt-4">
+      <div className="h-48 md:h-64 flex flex-col justify-start items-left gap-4 bg-gradient-to-b from-[#87c4d4] to-[#a8d3e0] rounded-2xl p-6">
+        <p className="text-sm font-semibold text-gray-500 text-left mb-4">AQI</p>
+        <p className="text-6xl md:text-8xl font-semibold text-gray-500 text-start">
+          {Math.round(weatherData.pm2_5)}
+          <span className="text-2xl md:text-5xl">µg/m³</span>
+        </p>
+        <p
+          className={`text-sm md:text-base font-semibold ${aqiStatus().color} text-start`}
+        >
+          {aqiStatus().status}
+        </p>
+      </div>
+    </div>
+  </div>
+);
 }
 
 export default Weather;
