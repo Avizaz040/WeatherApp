@@ -34,7 +34,7 @@ async function getWeatherReport() {
     feelslike_c: data.current.feelslike_c,
     pm2_5: data.current.air_quality.pm2_5,
   });
-  console.log(data);
+  // console.log(data);
 }
 useEffect(() => {getWeatherReport()},[query]);
 
