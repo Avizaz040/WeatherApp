@@ -114,7 +114,7 @@ return (
       {/* Rain */}
       <div className="h-48 md:h-64 w-full flex flex-col justify-start items-left gap-4 bg-gradient-to-b from-[#87c4d4] to-[#a8d3e0] rounded-2xl p-6">
         <p className="h-1/3 text-sm font-semibold text-gray-500 text-left mb-4">Rain</p>
-        <p className="h-2/3 text-4xl md:text-[5rem] font-semibold text-gray-500 text-left">
+        <p className="h-2/3 text-6xl md:text-[5rem] font-semibold text-gray-500 text-left">
           {weatherData.precip_in}
           <span className="text-2xl md:text-5xl">inch</span>
         </p>
@@ -123,7 +123,7 @@ return (
       {/* Feels Like */}
       <div className="h-48 md:h-64  flex flex-col justify-start items-left gap-4 bg-gradient-to-b from-[#87c4d4] to-[#a8d3e0] rounded-2xl p-6 col-span-1">
         <p className="h-1/3 text-sm font-semibold text-gray-500 text-left mb-4">Feels like</p>
-        <p className="h-2/3 text-4xl md:text-[5rem] font-semibold text-gray-500 text-left">
+        <p className="h-2/3 text-6xl md:text-[5rem] font-semibold text-gray-500 text-left">
           {Math.round(weatherData.feelslike_c)}
         </p>
       </div>
